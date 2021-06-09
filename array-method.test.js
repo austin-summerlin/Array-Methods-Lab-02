@@ -1,4 +1,4 @@
-import { map, filter } from './array-methods.js';
+import { map, filter, findIndex } from './array-methods.js';
 
 describe('map', () => {
   it('map through and multiply each value in array by 2', () => {
@@ -26,4 +26,10 @@ describe('filter', () => {
   });
 });
 
-describe
+describe('findIndex', () => {
+  it('returns the index of the first item whose callback returns true', () => {
+    const arr = [0, 1, 2, 3, 4, 5];
+    const index = findIndex(arr, (item) => item === 2);
+    expect(index).toEqual(2);
+  });
+});
