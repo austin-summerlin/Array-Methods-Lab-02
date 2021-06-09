@@ -1,4 +1,4 @@
-import { map } from './array-methods.js';
+import { map, filter } from './array-methods.js';
 
 describe('map', () => {
   it('map through and multiply each value in array by 2', () => {
@@ -13,4 +13,15 @@ describe('map', () => {
 
 });
 
+describe('filter', () => {
+  it('filters out the even numbers', () => {
+    const input = [
+      [2, 4, 5, 34, 55, 66, 77],
+      n => n % 2
+    ];
+    const actual = filter(...input);
+    const expected = [5, 55, 77];
 
+    expect(actual).toEqual(expected);
+  });
+});
