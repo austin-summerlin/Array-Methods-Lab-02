@@ -22,8 +22,10 @@ export function findIndex(arr, callback) {
 export function reduce(arr, callback, initialValue) {
   let acc = initialValue || arr[0];
   for (const elem of arr) {
-    const newAccumulation = callback(acc, elem);
-    acc = newAccumulation;
+    if (elem !== undefined) {
+      const newAccumulation = callback(acc, elem);
+      acc = newAccumulation;
+    }
   }
   return acc;
 }
