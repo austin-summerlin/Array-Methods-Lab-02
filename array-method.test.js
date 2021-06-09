@@ -36,9 +36,13 @@ describe('findIndex', () => {
 
 describe('reduce', () => {
   it('returns the final accumulator value without an initial value', () => {
-    const arr = [1, 2, 3, 4, 5];
-    const accumulator = reduce(arr, (accumulator, item) => accumulator + item, 0);
-    expect(accumulator).toEqual(15);
+    const input = [
+      [1, 2, 3, 4, 5],
+      (acc, item) => acc += item
+    ];
+    const actual = reduce(...input);
+    const expected = 16;
+    expect(actual).toEqual(expected);
   });
 });
 

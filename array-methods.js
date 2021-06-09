@@ -1,3 +1,4 @@
+/* eslint-disable keyword-spacing */
 export function map(arr, callback) {
   const newArr = [];
   for (let i = 0; i < arr.length; i++) newArr[i] = callback(arr[i]);
@@ -18,4 +19,12 @@ export function findIndex(arr, callback) {
   return -1;
 }
 
+export function reduce(arr, callback, initialValue) {
+  let acc = initialValue || arr[0];
+  for (const elem of arr) {
+    const newAccumulation = callback(acc, elem);
+    acc = newAccumulation;
+  }
+  return acc;
+}
 
