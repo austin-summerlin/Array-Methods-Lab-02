@@ -1,4 +1,4 @@
-import { map, filter, findIndex } from './array-methods.js';
+import { map, filter, findIndex, reduce } from './array-methods.js';
 
 describe('map', () => {
   it('map through and multiply each value in array by 2', () => {
@@ -33,3 +33,12 @@ describe('findIndex', () => {
     expect(index).toEqual(2);
   });
 });
+
+describe('reduce', () => {
+  it('returns the final accumulator value without an initial value', () => {
+    const arr = [1, 2, 3, 4, 5];
+    const accumulator = reduce(arr, (accumulator, item) => accumulator + item, 0);
+    expect(accumulator).toEqual(15);
+  });
+});
+
