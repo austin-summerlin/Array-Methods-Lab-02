@@ -31,5 +31,9 @@ export function reduce(arr, callback, initialValue) {
 }
 
 export function every(arr, callback) {
-
+  for (const elem of arr) {
+    if (elem !== undefined && !callback(elem)) return false;
+  }
+  return true;
 }
+
