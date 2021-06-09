@@ -30,3 +30,6 @@ export function reduce(arr, callback, initialValue) {
   return acc;
 }
 
+export function every(arr, callback) {
+
+}

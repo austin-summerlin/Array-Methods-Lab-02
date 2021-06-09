@@ -1,4 +1,4 @@
-import { map, filter, findIndex, reduce } from './array-methods.js';
+import { map, filter, findIndex, reduce, every } from './array-methods.js';
 
 describe('map', () => {
   it('map through and multiply each value in array by 2', () => {
@@ -43,6 +43,20 @@ describe('reduce', () => {
     const actual = reduce(...input);
     const expected = 16;
     expect(actual).toEqual(expected);
+  });
+});
+
+describe('every', () => {
+  it('check if every number is even', () => {
+    const input = [
+      [2, 4, 6, 7, 10],
+      num => num % 2
+    ];
+    const actual = every(...input);
+    const expected = false;
+
+    expect(actual).toBe(expected);
+
   });
 });
 
