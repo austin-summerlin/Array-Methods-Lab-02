@@ -1,5 +1,5 @@
 export function map(arr, callback) {
   const newArr = [];
-  for (const elem of arr) newArr.push(callback(elem));
+  for (let i = 0; i < arr.length; i++) newArr[i] = callback(arr[i]);
   return newArr;
 }
